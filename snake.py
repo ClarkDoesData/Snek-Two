@@ -45,3 +45,10 @@ class Snake:
         snake_part.goto(positions)
         snake_part.color("white")
         self.snake_body.append(snake_part)
+
+    def reset(self):
+        for segment in self.snake_body:
+            segment.goto(1000,1000)
+        self.snake_body.clear()
+        self.create_snake()
+        self.snake_head = self.snake_body[0]
